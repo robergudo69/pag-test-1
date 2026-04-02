@@ -30,32 +30,35 @@
 
     <section id="menu" class="menu">
         <h2>Our Signature Dishes</h2>
+        <p style="margin-bottom: 30px; color: #aaa;">Click on any dish to see our secret preparation and details.</p>
         <div class="menu-grid">
+            
             <div class="menu-item fade-in" onclick="openDish('salad')">
                 <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop" alt="Zen Salad">
                 <h3>Zen Garden Salad</h3>
-                <p>Click to see recipe & details</p>
+                <p>Fresh organic greens & avocado</p>
                 <span class="price">$15.00</span>
             </div>
 
             <div class="menu-item fade-in" style="animation-delay: 0.2s;" onclick="openDish('pizza')">
                 <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&auto=format&fit=crop" alt="Artisan Pizza">
                 <h3>Diavola Pizza</h3>
-                <p>Click to see recipe & details</p>
+                <p>Sourdough & spicy pepperoni</p>
                 <span class="price">$22.00</span>
             </div>
 
             <div class="menu-item fade-in" style="animation-delay: 0.4s;" onclick="openDish('burger')">
                 <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=400&auto=format&fit=crop" alt="Premium Burger">
                 <h3>Angus Prime Burger</h3>
-                <p>Click to see recipe & details</p>
+                <p>Dry-aged beef & brioche</p>
                 <span class="price">$19.00</span>
             </div>
+
         </div>
     </section>
 
     <section id="hours" class="info">
-        <div class="info-card fade-in" id="hours-card">
+        <div class="info-card fade-in">
             <h3>Opening Hours</h3>
             <p>Monday - Friday: 12:00 PM - 10:00 PM</p>
             <p>Saturday: 1:00 PM - 11:00 PM</p>
@@ -72,7 +75,8 @@
     <div id="dishModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <div id="modalBody"></div>
+            <div id="modalBody">
+                </div>
         </div>
     </div>
 
