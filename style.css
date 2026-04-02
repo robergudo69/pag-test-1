@@ -218,4 +218,8 @@ nav a:hover {
         opacity: 1;
         transform: translateY(0);
     }
+} .hero-content {
+    max-width: 800px; /* Evita que el texto se estire demasiado */
+    margin: 0 auto;   /* Lo centra perfectamente */
+    padding: 0 20px;  /* Le da aire a los lados en celulares */
 }
