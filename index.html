@@ -28,61 +28,37 @@
         </div>
     </section>
 
-    <section id="menu" class="menu">
+   <section id="menu" class="menu">
         <h2>Our Signature Dishes</h2>
         <div class="menu-grid">
-            <div class="menu-item fade-in">
+            
+            <div class="menu-item fade-in" onclick="openDish('salad')">
                 <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop" alt="Zen Salad">
                 <h3>Zen Garden Salad</h3>
-                <p>Premium green mix, fresh avocado, and our signature secret dressing.</p>
+                <p>Click to see recipe & details</p>
                 <span class="price">$15.00</span>
             </div>
-            <div class="menu-item fade-in" style="animation-delay: 0.2s;">
+
+            <div class="menu-item fade-in" style="animation-delay: 0.2s;" onclick="openDish('pizza')">
                 <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&auto=format&fit=crop" alt="Artisan Pizza">
                 <h3>Diavola Pizza</h3>
-                <p>Sourdough crust, spicy pepperoni, and fresh buffalo mozzarella.</p>
+                <p>Click to see recipe & details</p>
                 <span class="price">$22.00</span>
             </div>
-            <div class="menu-item fade-in" style="animation-delay: 0.4s;">
+
+            <div class="menu-item fade-in" style="animation-delay: 0.4s;" onclick="openDish('burger')">
                 <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=400&auto=format&fit=crop" alt="Premium Burger">
                 <h3>Angus Prime Burger</h3>
-                <p>Angus beef, aged cheddar cheese, and toasted brioche bun.</p>
+                <p>Click to see recipe & details</p>
                 <span class="price">$19.00</span>
             </div>
+
         </div>
     </section>
 
-    <section id="hours" class="info">
-        <div class="info-card fade-in">
-            <h3>Opening Hours</h3>
-            <p>Monday - Friday: 12:00 PM - 10:00 PM</p>
-            <p>Saturday: 1:00 PM - 11:00 PM</p>
-            <p>Sunday: Closed</p>
+    <div id="dishModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
         </div>
-        <div id="contact" class="info-card fade-in" style="animation-delay: 0.3s;">
-            <h3>Contact Us</h3>
-            <p>📍 123 Main Avenue, Downtown</p>
-            <p>📞 +1 (555) 123-4567</p>
-            <p>✉️ bookings@saborarte.com</p>
-        </div>
-    </section>
-
-    <script src="app.js"></script>
-</body>
-</html> 
-<div class="menu-grid">
-    <div class="menu-item fade-in" onclick="openDish('salad')">
-        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop" alt="Zen Salad">
-        <h3>Zen Garden Salad</h3>
-        <p>Click to see recipe & details</p>
-        <span class="price">$15.00</span>
     </div>
-    </div>
-
-<div id="dishModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div id="modalBody">
-            </div>
-    </div>
-</div>
