@@ -157,3 +157,51 @@ function closeModal() {
 window.onclick = (event) => {
     if (event.target == modal) closeModal();
 }
+const dishData = {
+    salad: {
+        title: "Zen Garden Salad",
+        price: "$15.00",
+        img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600",
+        prep: "Fresh greens are tossed with organic honey-mustard vinaigrette, topped with roasted sunflower seeds, feta cheese, and balsamic reduction."
+    },
+    pizza: {
+        title: "Diavola Pizza",
+        price: "$22.00",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600",
+        prep: "Neapolitan style dough fermented for 48 hours, San Marzano tomatoes, spicy salami from Calabria, and fresh buffalo mozzarella baked at 450°C."
+    },
+    burger: {
+        title: "Angus Prime Burger",
+        price: "$19.00",
+        img: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600",
+        prep: "200g of dry-aged Angus beef, double cheddar cheese, caramelized onions with balsamic, and house-made truffle aioli on a toasted brioche bun."
+    }
+};
+
+const modal = document.getElementById("dishModal");
+const modalBody = document.getElementById("modalBody");
+
+// ESTA FUNCIÓN ES LA QUE ABRE LA VENTANA
+function openDish(key) {
+    const dish = dishData[key];
+    if (dish) {
+        modalBody.innerHTML = `
+            <img src="${dish.img}" style="width:100%; border-radius:10px; height:280px; object-fit:cover; margin-bottom:20px;">
+            <h2 style="color:#c19a6b; font-size:2rem;">${dish.title}</h2>
+            <p style="font-size:1.3rem; margin:10px 0;">Price: ${dish.price}</p>
+            <hr style="border:0; border-top:1px solid #333; margin:20px 0;">
+            <h3 style="color:#c19a6b; margin-bottom:10px;">Preparation Detail:</h3>
+            <p style="line-height:1.6; color:#ccc;">${dish.prep}</p>
+        `;
+        modal.style.display = "block";
+    }
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Cerrar al hacer clic fuera del cuadro
+window.onclick = (event) => {
+    if (event.target == modal) closeModal();
+}
