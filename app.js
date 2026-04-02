@@ -62,3 +62,54 @@ navLinks.forEach(link => {
         }, 600); // 600ms es el tiempo promedio del desplazamiento suave
     });
 });console.log("%c🍴 Sabor & Arte - Web Successfully Loaded", "color: #c19a6b; font-size: 1.2rem; font-weight: bold;");
+// Base de datos de platillos
+const dishData = {
+    salad: {
+        title: "Zen Garden Salad",
+        price: "$15.00",
+        img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=600",
+        desc: "A refreshing blend of organic greens, avocado, and toasted nuts.",
+        prep: "Hand-picked greens are washed in ice water, tossed with house-made citrus vinaigrette, and topped with sliced avocado and sunflower seeds."
+    },
+    pizza: {
+        title: "Diavola Pizza",
+        price: "$22.00",
+        img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=600",
+        desc: "Classic spicy Italian pizza with premium toppings.",
+        prep: "48-hour fermented sourdough crust, topped with San Marzano tomatoes, spicy Calabrian salami, and fresh buffalo mozzarella. Baked at 450°C."
+    },
+    burger: {
+        title: "Angus Prime Burger",
+        price: "$19.00",
+        img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=600",
+        desc: "The ultimate meat lover's experience.",
+        prep: "200g of dry-aged Angus beef grilled over charcoal, served on a toasted brioche bun with caramelized onions and aged cheddar cheese."
+    }
+};
+
+const modal = document.getElementById("dishModal");
+
+function openDish(dishKey) {
+    const dish = dishData[dishKey];
+    const body = document.getElementById("modalBody");
+
+    body.innerHTML = `
+        <img src="${dish.img}" class="modal-img">
+        <h2>${dish.title} <span style="color:var(--primary)">${dish.price}</span></h2>
+        <p style="margin: 15px 0; color: #ccc;">${dish.desc}</p>
+        <div class="recipe-section">
+            <h4 style="color:var(--primary)">Preparation:</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">${dish.prep}</p>
+        </div>
+    `;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// Cerrar si hacen clic fuera del cuadro
+window.onclick = function(event) {
+    if (event.target == modal) { closeModal(); }
+}
