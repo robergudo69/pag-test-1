@@ -1,74 +1,64 @@
-// 1. Configuración de Estilos (CSS in JS)
-const style = document.createElement('style');
-style.textContent = `
-    body { 
-        background: #0f172a; 
-        color: white; 
-        font-family: 'Segoe UI', Tahoma, sans-serif; 
-        display: flex; 
-        justify-content: center; 
-        align-items: center; 
-        height: 100vh; 
-        margin: 0; 
+// Esperar a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Efecto de Scroll en el Header
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)';
+            header.style.padding = '0.7rem 5%';
+        } else {
+            header.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+            header.style.padding = '1rem 5%';
+        }
+    });
+
+    // 2. Animación de "Revelar al Hacer Scroll" (Scroll Reveal)
+    // Esto hace que los elementos aparezcan suavemente cuando el usuario baja
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Añadimos la clase que activa la animación CSS
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+    });
+
+    // Seleccionamos todos los elementos con la clase fade-in y los observamos
+    const animatedElements = document.querySelectorAll('.fade-in');
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Mensaje de bienvenida profesional en consola
+    console.log("%c🍴 Sabor & Arte - Web Cargada", "color: #c19a6b; font-size: 1.2rem; font-weight: bold;");
+}); // Función para iluminar el cuadro correspondiente
+const iluminarCuadro = (idDestino) => {
+    // Buscamos el elemento dentro de la sección (el info-card o el menu-item)
+    const seccion = document.querySelector(idDestino);
+    const cuadro = seccion.querySelector('.info-card, .menu-item, .hero-content');
+
+    if (cuadro) {
+        // Quitamos la clase por si ya la tenía (para poder repetirla)
+        cuadro.classList.remove('iluminar-seccion');
+        
+        // Forzamos un pequeño "refresco" para que el navegador note el cambio
+        void cuadro.offsetWidth; 
+        
+        // Añadimos la clase para que inicie la animación de 1 segundo
+        cuadro.classList.add('iluminar-seccion');
     }
-    .card {
-        background: #1e293b;
-        padding: 2rem;
-        border-radius: 1rem;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        text-align: center;
-        border: 1px solid #334155;
-        max-width: 400px;
-    }
-    .btn {
-        background: #3b82f6;
-        color: white;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 0.5rem;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background 0.3s;
-    }
-    .btn:hover { background: #2563eb; }
-    .counter { font-size: 3rem; margin: 1rem 0; color: #60a5fa; }
-`;
-document.head.appendChild(style);
+};
 
-// 2. Creación de Elementos
-const root = document.getElementById('root');
-
-const card = document.createElement('div');
-card.className = 'card';
-
-const title = document.createElement('h1');
-title.innerText = 'JS Dinámico';
-
-const desc = document.createElement('p');
-desc.innerText = 'Esta página fue generada 100% con código JavaScript.';
-
-const counterDisplay = document.createElement('div');
-counterDisplay.className = 'counter';
-counterDisplay.innerText = '0';
-
-const button = document.createElement('button');
-button.className = 'btn';
-button.innerText = 'Incrementar Potencial';
-
-// 3. Lógica e Interactividad
-let count = 0;
-button.addEventListener('click', () => {
-    count++;
-    counterDisplay.innerText = count;
-    // Efecto visual dinámico
-    card.style.borderColor = count % 2 === 0 ? '#3b82f6' : '#10b981';
-});
-
-// 4. Inyección al DOM
-card.appendChild(title);
-card.appendChild(desc);
-card.appendChild(counterDisplay);
-card.appendChild(button);
-root.appendChild(card);
-
-console.log("¡Web generada exitosamente!");
+// Escuchar clics en el menú
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href');
+        
+        // Esperamos un poco a que el scroll termine antes de iluminar
+        setTimeout(() => {
+            iluminarCuadro(id);
+        }, 600); // 600ms es el tiempo promedio del desplazamiento suave
+    });
+});console.log("%c🍴 Sabor & Arte - Web Successfully Loaded", "color: #c19a6b; font-size: 1.2rem; font-weight: bold;");

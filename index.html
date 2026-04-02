@@ -1,11 +1,72 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS Pure Power</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor & Arte | Gourmet Experience</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="root"></div>
+
+    <header>
+        <div class="logo">Taste & Art</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#hours">Hours</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content fade-in">
+            <h1>A Unique Culinary Journey</h1>
+            <p>Crafted with passion using the finest seasonal ingredients.</p>
+            <a href="#menu" class="btn">Explore Menu</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <h2>Our Signature Dishes</h2>
+        <div class="menu-grid">
+            <div class="menu-item fade-in">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop" alt="Zen Salad">
+                <h3>Zen Garden Salad</h3>
+                <p>Premium green mix, fresh avocado, and our signature secret dressing.</p>
+                <span class="price">$15.00</span>
+            </div>
+            <div class="menu-item fade-in" style="animation-delay: 0.2s;">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=400&auto=format&fit=crop" alt="Artisan Pizza">
+                <h3>Diavola Pizza</h3>
+                <p>Sourdough crust, spicy pepperoni, and fresh buffalo mozzarella.</p>
+                <span class="price">$22.00</span>
+            </div>
+            <div class="menu-item fade-in" style="animation-delay: 0.4s;">
+                <img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=400&auto=format&fit=crop" alt="Premium Burger">
+                <h3>Angus Prime Burger</h3>
+                <p>Angus beef, aged cheddar cheese, and toasted brioche bun.</p>
+                <span class="price">$19.00</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="hours" class="info">
+        <div class="info-card fade-in">
+            <h3>Opening Hours</h3>
+            <p>Monday - Friday: 12:00 PM - 10:00 PM</p>
+            <p>Saturday: 1:00 PM - 11:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+        <div id="contact" class="info-card fade-in" style="animation-delay: 0.3s;">
+            <h3>Contact Us</h3>
+            <p>📍 123 Main Avenue, Downtown</p>
+            <p>📞 +1 (555) 123-4567</p>
+            <p>✉️ bookings@saborarte.com</p>
+        </div>
+    </section>
+
     <script src="app.js"></script>
 </body>
 </html>
