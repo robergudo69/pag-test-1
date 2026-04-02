@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabor & Arte | Gourmet Experience</title>
+    <title>Taste & Art | Gourmet Experience</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,10 +28,9 @@
         </div>
     </section>
 
-   <section id="menu" class="menu">
+    <section id="menu" class="menu">
         <h2>Our Signature Dishes</h2>
         <div class="menu-grid">
-            
             <div class="menu-item fade-in" onclick="openDish('salad')">
                 <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400&auto=format&fit=crop" alt="Zen Salad">
                 <h3>Zen Garden Salad</h3>
@@ -52,7 +51,21 @@
                 <p>Click to see recipe & details</p>
                 <span class="price">$19.00</span>
             </div>
+        </div>
+    </section>
 
+    <section id="hours" class="info">
+        <div class="info-card fade-in" id="hours-card">
+            <h3>Opening Hours</h3>
+            <p>Monday - Friday: 12:00 PM - 10:00 PM</p>
+            <p>Saturday: 1:00 PM - 11:00 PM</p>
+            <p>Sunday: Closed</p>
+        </div>
+        <div id="contact" class="info-card fade-in" style="animation-delay: 0.3s;">
+            <h3>Contact Us</h3>
+            <p>📍 123 Main Avenue, Downtown</p>
+            <p>📞 +1 (555) 123-4567</p>
+            <p>✉️ bookings@saborarte.com</p>
         </div>
     </section>
 
@@ -62,3 +75,7 @@
             <div id="modalBody"></div>
         </div>
     </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
